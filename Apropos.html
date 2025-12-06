@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERRIFAIY JASSIM - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="design.css">
+    <script src="Action.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">ERRIFAIY JASSIM</a>
+                <ul class="nav-links">
+                    <li><a href="Accueil.html">Accueil</a></li>
+                    <li><a href="Apropos.html">À propos</a></li>
+                    <li><a href="Competences.html">Compétences</a></li>
+                    <li><a href="Projets.html">Projets</a></li>
+                    <li><a href="Experiences.html">Expériences</a></li>
+                    <li><a href="Formation.html">Formation</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="data/img.jpg" alt="ERRIFAIY JASSIM" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>Professionnel polyvalent en IA, systèmes & réseaux avec une solide formation en Génie Digital . 
+Expérience en maintenance et configuration informatique, interventions techniques et environnement 
+biomédical. Compétent en langages de programmation, l’apprentissage du machine, Windows Server, Cisco, 
+SQL/Oracle et microcontrôleurs. Créatif grâce à une maîtrise du graphique design .</p>
+                    <p>Je me sens mieux au travail, surtout lorsque mes tâches se terminent bien. Je suis une personne motivée et 
+sérieuse, aimant mener à bien chaque projet entrepris en donnant le meilleur de moi-même. Doté d'une 
+excellente capacité à travailler en équipe, à m'intégrer rapidement et à communiquer efficacement avec les 
+parties prenantes internes et externes. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>+212 762 462 977</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact.errifaiy@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/errifaiy-jassima</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
