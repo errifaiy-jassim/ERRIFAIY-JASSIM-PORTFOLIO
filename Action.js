@@ -47,9 +47,61 @@
             }
 
             setTimeout(type, typingSpeed);
+
+
         }
 
         // démarrer l'effet de frappe
         type();
+
+
+
+        // Système de filtrage des projets
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Sélectionner tous les boutons de filtre
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            // 2. Sélectionner toutes les cartes de projet
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // 3. Fonction pour filtrer les projets
+            function filterProjects(category) {
+                // Parcourir chaque carte de projet
+                projectCards.forEach(card => {
+                    // Récupérer la catégorie de la carte
+                    const cardCat = card.getAttribute('data-category');
+
+                    // Si on veut "Tous" OU si la carte correspond à la catégorie choisie
+                    if (category === 'all' || cardCat === category) {
+                        card.style.display = 'flex'; // Afficher la carte
+                    } else {
+                        card.style.display = 'none'; // Cacher la carte
+                    }
+                });
+            }
+
+            // 4. Ajouter un événement "click" à chaque bouton
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 4.1 Retirer la classe "active" de tous les boutons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+
+                    // 4.2 Ajouter la classe "active" au bouton cliqué
+                    this.classList.add('active');
+
+                    // 4.3 Récupérer la catégorie à filtrer
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // 4.4 Appliquer le filtre
+                    filterProjects(filterValue);
+                });
+            });
+
+            // 5. Initialisation : afficher tous les projets au chargement
+            filterProjects('all');
+        });
+
+    
+        
 
         

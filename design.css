@@ -335,8 +335,9 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-rows: masonry;
+            gap: 10px;
+
         }
 
         .project-card img {
@@ -349,6 +350,7 @@
 
         .project-card h3 {
             margin-bottom: 10px;
+            
         }
 
         .project-card .project-date {
@@ -669,4 +671,5 @@
                 max-width: 250px;
             }
         }
-    
+        
+        
