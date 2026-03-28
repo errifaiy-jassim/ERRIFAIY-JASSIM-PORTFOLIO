@@ -10,7 +10,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="design.css">
 </head>
+<script>
+            // Système de filtrage des projets
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Sélectionner tous les boutons de filtre
+            const filterBtns = document.querySelectorAll('.filter-btn');
 
+            // 2. Sélectionner toutes les cartes de projet
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // 3. Fonction pour filtrer les projets
+            function filterProjects(category) {
+                // Parcourir chaque carte de projet
+                projectCards.forEach(card => {
+                    // Récupérer la catégorie de la carte
+                    const cardCat = card.getAttribute('data-category');
+
+                    // Si on veut "Tous" OU si la carte correspond à la catégorie choisie
+                    if (category === 'all' || cardCat === category) {
+                        card.style.display = 'flex'; // Afficher la carte
+                    } else {
+                        card.style.display = 'none'; // Cacher la carte
+                    }
+                    
+                });
+            }
+
+            // 4. Ajouter un événement "click" à chaque bouton
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 4.1 Retirer la classe "active" de tous les boutons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+
+                    // 4.2 Ajouter la classe "active" au bouton cliqué
+                    this.classList.add('active');
+
+                    // 4.3 Récupérer la catégorie à filtrer
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // 4.4 Appliquer le filtre
+                    filterProjects(filterValue);
+                });
+            });
+
+            // 5. Initialisation : afficher tous les projets au chargement
+            filterProjects('all');
+        });
+</script>
 <body>
 
 <!-- Header -->
@@ -19,7 +65,7 @@
             <nav class="navbar">
                 <a href="#" class="logo">ERRIFAIY JASSIM</a>
                 <ul class="nav-links">
-                    <li><a href="Accueil.html">Accueil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="Apropos.html">À propos</a></li>
                     <li><a href="Competences.html">Compétences</a></li>
                     <li><a href="Projets.html">Projets</a></li>
@@ -44,7 +90,7 @@
                 <button class="filter-btn " data-filter="web">Web</button>
                 <button class="filter-btn" data-filter="graphisme">Graphisme</button>
                 <button class="filter-btn" data-filter="biomedical">Biomédical</button>
-                <button class="filter-btn" data-filter="ml">ML/IA</button>
+                <button class="filter-btn" data-filter="ml">IA</button>
                 <button class="filter-btn" data-filter="bdd">Bases de données</button>
             </div>
             <div class="projects-grid">
@@ -65,9 +111,9 @@
                 <!-- Projet 2 - ML -->
                 <div class="project-card card" data-category="ml">
                     <!--<img src="data/MiniProjet.png" alt="Classification d'images médicales"> -->
-                    <h3>Classification d'images médicales</h3>
+                    <h3>Pipeline d'images médicales</h3>
                     <div class="project-date">2025</div>
-                    <p>Pipeline de classification d'images radiologiques utilisant un modèle CNN.</p>
+                    <p>Classification d'images radiologiques</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">TensorFlow</span>
@@ -88,9 +134,6 @@
                     </div>
                     <a href="Projet_realiser/Inforgraphie.html" class="btn btn-outline">Voir le projet</a>
                 </div>
-            </div>
-        </div>
-    </section>
 
      <!-- Contact Section -->
     <section id="contact" class="contact">
